@@ -1,6 +1,9 @@
 package com.Group9.Bookflix.Entidades;
 
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.File;
 
 @Entity
