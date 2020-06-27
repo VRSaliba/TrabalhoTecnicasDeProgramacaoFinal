@@ -3,7 +3,11 @@ package com.Group9.Bookflix.Entidades;
 
 import java.io.File;
 
+@Entity
 public class Livro {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private String nome;
     private String sinopse;
     private String categoria;
@@ -11,6 +15,9 @@ public class Livro {
     private int id;
     private int avaliacao;
     private File livroFile;
+
+    protected Livro(){
+    }
 
     public Livro(String nome, String sinopse, String categoria, String autor, int id,
     int avaliacao, File livroFile){
@@ -23,52 +30,26 @@ public class Livro {
         this.livroFile = livroFile;
     }
 
-    public static class LivroBuilder {
-        private String nome;
-        private String sinopse;
-        private String categoria;
-        private String autor;
-        private int id;
-        private int avaliacao;
-        private File livroFile;
-
-        public LivroBuilder(){}
-
-        public LivroBuilder setNome(String str){
-            this.nome = str;
-            return this;
-        }
-        public LivroBuilder setSinopse(String str){
-            this.sinopse = str;
-            return this;
-        }
-        public LivroBuilder setCategoria(String str){
-            this.categoria = str;
-            return this;
-        }
-        public LivroBuilder setAutor(String str){
-            this.autor = str;
-            return this;
-        }
-        public LivroBuilder setID(int id){
-            this.id = id;
-            return this;
-        }
-        public LivroBuilder setAvaliacao(int ava){
-            this.avaliacao = ava;
-            return this;
-        }
-        public LivroBuilder setFile(File file){
-            this.livroFile = file;
-            return this;
-        }
-
-        public Livro build(){
-            return new Livro(nome, sinopse, categoria, autor, id, avaliacao, livroFile);
-        }
-    }
     
     //---Sets------------------------------------------------------------------------
+    public void setNome(String str){
+        this.nome = str;
+    }
+    public void setSinopse(String str){
+        this.sinopse = str;
+    }
+    public void setCategoria(String str){
+        this.categoria = str;
+    }
+    public void setAutor(String str){
+        this.autor = str;
+    }
+    public void setID(int id){
+        this.id = id;
+    }
+    public void setFile(File file){
+        this.livroFile = file;
+    }
     public void setAvaliacao(int ava){
         this.avaliacao = ava;
     }
