@@ -1,5 +1,6 @@
 package com.Group9.Bookflix.Entidades;
 
+
 import java.io.File;
 
 public class Livro {
@@ -65,6 +66,11 @@ public class Livro {
         public Livro build(){
             return new Livro(nome, sinopse, categoria, autor, id, avaliacao, livroFile);
         }
+    }
+    
+    //---Sets------------------------------------------------------------------------
+    public void setAvaliacao(int ava){
+        this.avaliacao = ava;
     }
 
     //---Gets------------------------------------------------------------------------

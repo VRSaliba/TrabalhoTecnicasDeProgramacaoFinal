@@ -1,53 +1,53 @@
 package com.Group9.Bookflix.Entidades;
 
-import java.util.List;
+import java.util.LinkedList;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private String userName;
     private String senha;
-    private List livrosLidos;
+    private LinkedList<Livro> livrosLidos;
+    
+    protected User(){        
+    }
 
-    public User(String userName, String senha, List livreosLidos){
+    public User(String userName, String senha, LinkedList<Livro> livrosLidos){
         this.userName = userName;
         this.senha = senha;
         this.livrosLidos = livrosLidos;
     }
 
-    public static class UserBuilder{
-        private String userName;
-        private String senha;
-        private List livrosLidos;
-
-        public UserBuilder(){}
-
-        public UserBuilder setUserName(String userName){
-            this.userName = userName;
-            return this;
-        }
-        public UserBuilder setSenha(String senha){
-            this.senha = senha;
-            return this;
-        }
-        public UserBuilder setLivrosLidos(List livrosLidos){
-            this.livrosLidos = livrosLidos;
-            return this;
-        }
-
-        public User build(){
-            return new User(userName, senha, livrosLidos);
-        }
-    }
-    
-
-    //---Gets------------------------------------------------------------------------
+    //---Sets------------------------------------------------------------------
     public String getUserName(){
         return userName;
     }
     public String getSenha(){
         return senha;
     }
-    public List getLivrosLidos(){
+    public void addLivrosLidos(Livro livro){
+        livrosLidos.add(livro);
+    }
+
+    //---Gets------------------------------------------------------------------
+    public String getUserName(){
+        return userName;
+    }
+    public String getSenha(){
+        return senha;
+    }
+    public LinkedList<Livro> getLivrosLidos(){
         return livrosLidos;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario=> Nome:"+ userName +", Senha: "+ senha +", Livros Lidos: "+ livrosLidos+"]";
     }
 
 }
