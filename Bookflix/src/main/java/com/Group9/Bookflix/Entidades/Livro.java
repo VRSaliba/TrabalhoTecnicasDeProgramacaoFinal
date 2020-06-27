@@ -76,4 +76,10 @@ public class Livro {
     public File getFile(){
         return livroFile;
     }
+
+    @Override
+    public String toString() {
+        return "Livro=> Nome:"+ nome +", ID: "+ id +", Autor: "+ autor+" Categoria: "+ categoria + " Autor: "+autor+" Avaliacao:"+avaliacao+"]";
+    }
+
 }
