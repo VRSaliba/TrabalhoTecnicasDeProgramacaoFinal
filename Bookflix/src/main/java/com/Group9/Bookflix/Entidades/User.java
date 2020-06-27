@@ -22,16 +22,20 @@ public class User {
         this.senha = senha;
         this.livrosLidos = livrosLidos;
     }
-
-    //---Sets------------------------------------------------------------------
-    public String getUserName(){
-        return userName;
-    }
-    public String getSenha(){
-        return senha;
-    }
+     
     public void addLivrosLidos(Livro livro){
         livrosLidos.add(livro);
+    }
+
+    //---Sets------------------------------------------------------------------
+    public void setNome(String str){
+        this.userName = str;
+    }
+    public void setSenha(String str){
+        this.senha = str;
+    }
+    public void setLivrosLidos(LinkedList<Livro> livrosLidos){
+        this.livrosLidos = livrosLidos;
     }
 
     //---Gets------------------------------------------------------------------
